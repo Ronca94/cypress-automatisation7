@@ -1,4 +1,7 @@
 class CreateGallery {
+    get Create_gallery() {
+        return cy.get("a[href='/create']")
+    }
     get getTitle() {
         return cy.get ('#title')
     }
@@ -7,6 +10,9 @@ class CreateGallery {
     }
     get imageUrl() {
         return cy.get("input[placeholder='image url']")
+    }
+    get Add_image() {
+        return cy.get("form > :nth-child(3) > :nth-child(3)")
     }
     get submitGallery () {
         return cy.get('.btn').eq(0)
@@ -17,5 +23,6 @@ class CreateGallery {
         this.imageUrl.type(imageUrl)
         this.submitGallery.eq(0).click()
     }
+    
 }
 export const createGallery = new CreateGallery()
